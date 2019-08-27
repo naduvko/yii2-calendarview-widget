@@ -2,15 +2,15 @@
 
 /**
  * @author Marek Petras <mark@markpetras.eu>
- * @link https://github.com/marekpetras/yii2-calendarview-widget
+ * @link https://github.com/naduvko/yii2-calendarview-widget
  * @license http://www.opensource.org/licenses/mit-license.php MIT License
  * @version 1.0.1
  */
 
-namespace marekpetras\calendarview;
+namespace naduvko\calendarview;
 
-use marekpetras\calendarview\CalendarViewAsset;
-use marekpetras\calendarview\CalendarViewDateTime;
+use naduvko\calendarview\CalendarViewAsset;
+use naduvko\calendarview\CalendarViewDateTime;
 
 use app\helpers\DateHelper;
 use yii\helpers\VarDumper;
@@ -49,7 +49,7 @@ use Exception;
  *
  * View
  * ~~~
- * use marekpetras\calendarview\CalendarView;
+ * use naduvko\calendarview\CalendarView;
  *
  * echo CalendarView::widget(
  *     [
@@ -64,9 +64,9 @@ use Exception;
  *         'title'     => 'Calendar',
  *
  *         'views'     => [
- *             'calendar' => '@vendor/marekpetras/yii2-calendarview-widget/views/calendar',
- *             'month' => '@vendor/marekpetras/yii2-calendarview-widget/views/month',
- *             'day' => '@vendor/marekpetras/yii2-calendarview-widget/views/day',
+ *             'calendar' => '@vendor/naduvko/yii2-calendarview-widget/views/calendar',
+ *             'month' => '@vendor/naduvko/yii2-calendarview-widget/views/month',
+ *             'day' => '@vendor/naduvko/yii2-calendarview-widget/views/day',
  *         ],
  *         'startYear' => date('Y') - 1,
  *         'endYear' => date('Y') + 1,
@@ -140,9 +140,9 @@ class CalendarView extends \yii\base\Widget
      * @var array predefined views, override for your own, make sure its readable by $this->view->render()
      */
     public $views = [
-        'calendar' => '@vendor/marekpetras/yii2-calendarview-widget/views/calendar',
-        'month' => '@vendor/marekpetras/yii2-calendarview-widget/views/month',
-        'day' => '@vendor/marekpetras/yii2-calendarview-widget/views/day',
+        'calendar' => '@vendor/naduvko/yii2-calendarview-widget/views/calendar',
+        'month' => '@vendor/naduvko/yii2-calendarview-widget/views/month',
+        'day' => '@vendor/naduvko/yii2-calendarview-widget/views/day',
     ];
 
     /**
@@ -241,7 +241,7 @@ class CalendarView extends \yii\base\Widget
         Yii::$app->i18n->translations['calendar'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@vendor/marekpetras/yii2-calendarview-widget/messages',
+            'basePath' => '@vendor/naduvko/yii2-calendarview-widget/messages',
             'fileMap' => [
                 'calendar' => 'calendar.php',
             ],

@@ -7,7 +7,7 @@
  * @version 1.0.1
  */
 
-namespace marekpetras\calendarview;
+namespace naduvko\calendarview;
 
 use DateTime;
 use DateInterval;

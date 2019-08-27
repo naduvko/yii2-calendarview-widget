@@ -7,7 +7,7 @@
  * @version 1.0.1
  */
 
-namespace marekpetras\calendarview;
+namespace naduvko\calendarview;
 
 use yii\web\AssetBundle;
 
@@ -16,7 +16,7 @@ use yii\web\AssetBundle;
  */
 class CalendarViewAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/marekpetras/yii2-calendarview-widget/assets';
+    public $sourcePath = '@vendor/naduvko/yii2-calendarview-widget/assets';
     public $js = [
         'marekpetras.calendar.js',
     ];

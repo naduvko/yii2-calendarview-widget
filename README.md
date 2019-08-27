@@ -21,13 +21,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist marekpetras/yii2-calendarview-widget "^1.0"
+php composer.phar require --prefer-dist naduvko/yii2-calendarview-widget "^1.0"
 ```
 
 or add
 
 ```
-"marekpetras/yii2-calendarview-widget": "^1.0"
+"naduvko/yii2-calendarview-widget": "^1.0"
 ```
 
 to the require section of your `composer.json` file.
@@ -139,7 +139,7 @@ and the view
 
 #### views/calendar/index.php ####
 ```php
-use marekpetras\calendarview\CalendarView;
+use naduvko\calendarview\CalendarView;
 
 echo CalendarView::widget(
     [
@@ -155,9 +155,9 @@ echo CalendarView::widget(
         'title'     => 'Calendar',
 
         'views'     => [
-            'calendar' => '@vendor/marekpetras/yii2-calendarview-widget/views/calendar',
-            'month' => '@vendor/marekpetras/yii2-calendarview-widget/views/month',
-            'day' => '@vendor/marekpetras/yii2-calendarview-widget/views/day',
+            'calendar' => '@vendor/naduvko/yii2-calendarview-widget/views/calendar',
+            'month' => '@vendor/naduvko/yii2-calendarview-widget/views/month',
+            'day' => '@vendor/naduvko/yii2-calendarview-widget/views/day',
         ],
 
         'startYear' => date('Y') - 1,
