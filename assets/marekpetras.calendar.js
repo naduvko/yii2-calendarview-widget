@@ -5,8 +5,9 @@
         this.getCurrentMonth = function() {
             if (options.startDay) {
                 today = new Date(options.startDay);
-            } else today = new Date();
-            today = new Date();
+            } else {
+                today = new Date();
+            }
             mm = today.getMonth() + 1; //January is 0!
             yyyy = today.getFullYear();
             return (yyyy * 12) + +mm;
