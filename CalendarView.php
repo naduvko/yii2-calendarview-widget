@@ -160,6 +160,11 @@ class CalendarView extends \yii\base\Widget
      */
     public $unixTimestamp = false;
 
+    /**
+     * @var string used for positioning the calendar. If null shows current month.
+     */
+    public $positionMonth = null;
+
     // local
     private $models = [];
     private $calendarFormat = 'Y-m-d';
@@ -206,7 +211,7 @@ class CalendarView extends \yii\base\Widget
         CalendarViewAsset::register($this->getView());
 
         $key = __CLASS__ . '#' . $this->id;
-        $js = "$('#".$this->id."').calendar();";
+        $js = "$('#".$this->id."').calendar({startDay: '".$this->positionMonth."'});";
         $this->view->registerJs($js, View::POS_LOAD, $key);
     }
 

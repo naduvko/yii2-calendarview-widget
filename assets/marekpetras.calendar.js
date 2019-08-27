@@ -1,17 +1,15 @@
-(function ( $ ) {
+(function($) {
 
-    $.fn.calendar = function( options ) {
+    $.fn.calendar = function(options) {
 
         this.getCurrentMonth = function() {
+            if (options.startDay) {
+                today = new Date(options.startDay);
+            } else today = new Date();
             today = new Date();
-            mm = today.getMonth()+1; //January is 0!
+            mm = today.getMonth() + 1; //January is 0!
             yyyy = today.getFullYear();
-
-            // if(mm<10) {
-            //     mm='0'+mm
-            // }
-
-            return (yyyy*12)+ +mm;
+            return (yyyy * 12) + +mm;
         }
 
         console.log(this.getCurrentMonth());
@@ -20,27 +18,27 @@
             // These are the defaults.
             color: "#556b2f",
             backgroundColor: "white"
-        }, options );
+        }, options);
 
 
         var myCalendar = this;
 
         // bind navigation
-        this.find('a.navigate').click(function(e){
+        this.find('a.navigate').click(function(e) {
             e.preventDefault();
 
-            if ( myCalendar.find($('.'+$(this).data('show'))).length ) {
-                var show = myCalendar.find($('.'+$(this).data('show')));
-                hide = myCalendar.find($('.'+$(this).data('hide')));
+            if (myCalendar.find($('.' + $(this).data('show'))).length) {
+                var show = myCalendar.find($('.' + $(this).data('show')));
+                hide = myCalendar.find($('.' + $(this).data('hide')));
 
-                hide.fadeOut(100,function(){
+                hide.fadeOut(100, function() {
                     show.fadeIn(100);
                 });
             }
 
         });
 
-        return this.find('.'+this.getCurrentMonth()).show();
+        return this.find('.' + this.getCurrentMonth()).show();
     };
 
-}( jQuery ));
+}(jQuery));
