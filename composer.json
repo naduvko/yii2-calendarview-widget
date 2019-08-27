@@ -1,28 +1,27 @@
 {
-	"name": "naduvko/yii2-calendarview-widget",
-	"description": "CalendarView widget for Yii 2 Framework Bootstrap4.",
-	"keywords": ["yii2", "extension", "widget", "calendar", "view", "dataprovider", "activerecord"],
-	"homepage": "https://github.com/naduvko/yii2-calendarview-widget",
-	"type": "yii2-extension",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Marek Petras",
-			"email": "mark@markpetras.eu"
-		},
-		{
-			"name": "Ivan Chivchibashiev",
-			"email": "naduvko@gmail.com"
-		}
-	],
-	"minimum-stability": "stable",
-	"require": {
+    "name": "naduvko/yii2-calendarview-widget",
+    "description": "CalendarView widget for Yii 2 Framework Bootstrap4.",
+    "keywords": ["yii2", "extension", "widget", "calendar", "view", "dataprovider", "activerecord"],
+    "homepage": "https://github.com/naduvko/yii2-calendarview-widget",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [{
+            "name": "Marek Petras",
+            "email": "mark@markpetras.eu"
+        },
+        {
+            "name": "Ivan Chivchibashiev",
+            "email": "naduvko@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
         "yiisoft/yii2": "~2.0.19",
         "yiisoft/yii2-bootstrap4": "*"
-	},
-	"autoload": {
-		"psr-4": {
-			"marekpetras\\calendarview\\": "/"
-		}
-	}
+    },
+    "autoload": {
+        "psr-4": {
+            "naduvko\\calendarview\\": "/"
+        }
+    }
 }
