@@ -137,6 +137,11 @@ class CalendarView extends \yii\base\Widget
     public $dayRender = false;
 
     /**
+     * @var mixed day renderer if model is empty
+     */
+    public $dayRenderEmpty = '';
+
+    /**
      * @var array predefined views, override for your own, make sure its readable by $this->view->render()
      */
     public $views = [
@@ -164,6 +169,11 @@ class CalendarView extends \yii\base\Widget
      * @var string used for positioning the calendar. If null shows current month.
      */
     public $positionMonth = null;
+
+    /** 
+     *  @var string for use to return the current day in closures
+     */
+    public $currentDay;
 
     // local
     private $models = [];
@@ -328,12 +338,19 @@ class CalendarView extends \yii\base\Widget
             }
 
             // fill in model data
+            $this->currentDay = $current->date();
             $models = array_key_exists($current->date(), (array) $this->models) ? $this->models[$current->date()] : [];
-            $dayRender = '';
+            if ($this->dayRenderEmpty instanceof Closure) {
+                $dayRender = call_user_func($this->dayRenderEmpty, $this);
+            }
+            else {
+            
+                $dayRender = $this->dayRenderEmpty;
+            }
             foreach ( $models as $model ) {
 
                 if ($this->dayRender instanceof Closure) {
-                    $dayRender .= call_user_func($this->dayRender, $model, $this);
+                    $dayRender = call_user_func($this->dayRender, $model, $this);
                 }
                 else {
                     $text = $model->{$this->valueField};
